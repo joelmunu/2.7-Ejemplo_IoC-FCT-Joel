@@ -1,21 +1,22 @@
 package com.iocexample.main;
 
 import com.iocexample.employee.Employee;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import com.iocexample.employee.Ceo;
 import com.iocexample.factory.Factory;
 
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("--- Reporte de trabajo del CEO ---");
-		Factory factory = new Factory(new Ceo());
+		ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
+		BeanFactory beanFactory = context;
+		Factory factory = (Factory) beanFactory.getBean("factory");
 		factory.getOnDuty();
 		factory.getOffDuty();
-		System.out.println("\n");
-		System.out.println("--- Reporte de trabajo de los empleados ---");
-		Factory employeeFactory = new Factory(new Employee());
-		employeeFactory.getOnDuty();
-		employeeFactory.getOffDuty();
 	}
 
 }

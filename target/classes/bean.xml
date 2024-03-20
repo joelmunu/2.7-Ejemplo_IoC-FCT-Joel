@@ -8,4 +8,10 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     
+    <bean id="empleado" class="com.iocexample.employee.Employee"/>
+    <bean id="ceo" class="com.iocexample.employee.Ceo"/>
+    <bean id="factory" class="com.iocexample.factory.Factory">
+    	<property name="employee" ref="ceo"/>
+    	</bean>
+    
  </beans>

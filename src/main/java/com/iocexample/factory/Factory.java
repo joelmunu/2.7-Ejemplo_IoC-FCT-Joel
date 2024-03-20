@@ -9,6 +9,20 @@ public class Factory {
 		this.employee = employee;
 	}
 	
+	public Factory() {
+		
+	}
+	
+	
+	
+	public IEmployee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(IEmployee employee) {
+		this.employee = employee;
+	}
+
 	public void getOnDuty() {
 		employee.onDuty();
 	}
