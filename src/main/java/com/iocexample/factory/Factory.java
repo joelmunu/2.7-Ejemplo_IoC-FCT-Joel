@@ -13,8 +13,6 @@ public class Factory {
 		
 	}
 	
-	
-	
 	public IEmployee getEmployee() {
 		return employee;
 	}
